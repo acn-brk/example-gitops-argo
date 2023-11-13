@@ -1,0 +1,15 @@
+# Dependency in 'charts/argo-cd/Chart.yaml' file is called 'argo-cd', so we set that as key to override
+argo-cd:
+  # integration with external auth providers
+  dex:
+    enabled: false
+  # notify users about changes to application state
+  notifications:
+    enabled: false
+  # automated generation of Argo CD Applications
+  applicationSet:
+    enabled: false
+  server:
+    extraArgs:
+      # local dev cluster, no TLS
+      - --insecure
